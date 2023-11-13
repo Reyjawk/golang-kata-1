@@ -14,6 +14,7 @@ func check(e error) {
     if e != nil {
         panic(e)
     }
+}
 func main() {
 	fmt.Println(welcomeMessage())
 	books, err := os.Open("/Users/toni/GoLang/golang-kata-1/resources/books.csv")
