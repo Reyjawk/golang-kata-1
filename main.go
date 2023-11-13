@@ -73,7 +73,7 @@ func main() {
 		fmt.Println(eachrecord)
 	} */
 	titleisbnList := createTitleISBNList(records)
-	//print
+	//print array
 	fmt.Printf("%+v\n", titleisbnList)
 }
 func welcomeMessage() string {
