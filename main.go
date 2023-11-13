@@ -24,6 +24,7 @@ func main() {
 	for _, line := range scanLines {
 		fmt.Println(line)
 	}
+	welcomeMessage()
 }
 
 func welcomeMessage() string {
