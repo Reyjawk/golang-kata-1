@@ -42,7 +42,7 @@ func main() {
 	//Set delimiter
 	reader.Comma = ';'
 	//ReadAll in the file
-	recorders, err := reader.ReadAll()
+	records, err := reader.ReadAll()
 	//Checks for errors
 	if err != nil {
 		fmt.Println("Error reading records")
