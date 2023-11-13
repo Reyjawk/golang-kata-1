@@ -15,6 +15,27 @@ func check(e error) {
         panic(e)
     }
 }
+type TitleISBN struct {
+	Title string
+	ISBN string
+}
+func createTitleISBNList(records [] []string) []TitleISBN {
+	var titleisbnList []TitleISBN
+	for i, line := range records {
+		if i > 0 { // omit header line
+			var rec TitleISBN
+			for j, field := range line {
+				if j == 0 {
+					rec.Title = field
+				} else if j == 1 {
+					rec.ISBN = field
+				}
+			}
+			titleisbnList = append(titleisbnList, rec)
+		}
+	}
+	return titleisbnList
+}
 func main() {
 	fmt.Println(welcomeMessage())
 	books, err := os.Open("/Users/toni/GoLang/golang-kata-1/resources/books.csv")
@@ -47,10 +68,13 @@ func main() {
 	if err != nil {
 		fmt.Println("Error reading records")
 	}
-	//Loop to iterate through and print each of the string slices
+	/*Loop to iterate through and print each of the string slices
 	for _, eachrecord := range records {
 		fmt.Println(eachrecord)
-	}
+	} */
+	titleisbnList := createTitleISBNList(records)
+	//print
+	fmt.Printf("%+v\n", titleisbnList)
 }
 func welcomeMessage() string {
 	return "Hello world!"
