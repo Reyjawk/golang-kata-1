@@ -19,7 +19,7 @@ func main() {
 	fmt.Println(welcomeMessage())
 	books, err := os.Open("/Users/toni/GoLang/golang-kata-1/resources/books.csv")
     check(err)
-	books.Close()
+	defer books.Close()
 	/*
 	scanFile := bufio.NewScanner(books)
 	scanFile.Split(bufio.ScanLines)
