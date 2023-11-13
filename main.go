@@ -43,7 +43,7 @@ func main() {
 	//ReadAll in the file
 	recorders, err := reader.ReadAll()
 	//Checks for errors
-	if err != nil{
+	if err != nil {
 		fmt.Println("Error reading records")
 	}
 	//Loop to iterate through and print each of the string slices
@@ -51,7 +51,6 @@ func main() {
 		fmt.Println(eachrecord)
 	}
 }
-
 func welcomeMessage() string {
 	return "Hello world!"
 }
