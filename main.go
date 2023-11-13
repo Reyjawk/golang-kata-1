@@ -1,13 +1,13 @@
 package main
 
 import (
-	"bufio"
-	"bytes"
+//	"bufio"
+//	"bytes"
 	"encoding/csv"
 	"fmt"
-	"io"
+//	"io"
 	"os"
-	"log"
+//	"log"
 )
 //Error checking for the file
 func check(e error) {
