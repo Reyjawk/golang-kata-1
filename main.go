@@ -42,6 +42,8 @@ func welcomeMessage() string {
 }
 
 func main() {
+	var title string
+	var isbn string
 	fmt.Println(welcomeMessage())
 	fmt.Println("Input T to look up by Title or I to look up by ISBN:")
 	userInput := bufio.NewReader(os.Stdin)
