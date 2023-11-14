@@ -117,7 +117,7 @@ func main() {
 			} 
 		}
 		if strings.Compare(found, "Y") != 0 {
-			fmt.Printf("Artifact not found %s\n")
+			fmt.Printf("Artifact not found \n")
 		}
 	}
 	//print array
