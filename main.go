@@ -58,6 +58,7 @@ func main() {
 		check(err)
 		fmt.Printf("Title entered: %s-\n", line)
 		title = strings.TrimRight(line, "\n")
+		fmt.Printf("Title entered: %s-\n", title)
 	} 
 	if strings.Compare(line, "I") == 0 {
 		fmt.Println("Enter ISBN:")
@@ -66,6 +67,7 @@ func main() {
 		check(err)
 		fmt.Printf("ISBN entered: %s-\n", line)
 		isbn = strings.TrimRight(line, "\n")
+		fmt.Printf("Title entered: %s-\n", isbn)
 	}
 	books, err := os.Open("/Users/toni/GoLang/golang-kata-1/resources/books.csv")
     check(err)
