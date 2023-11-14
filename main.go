@@ -115,9 +115,9 @@ func main() {
 				fmt.Printf("ISBN Found! Your title and ISBN are: %s\n", titleisbnList[i])
 				found = "Y"
 			} 
+		}
 		if strings.Compare(found, "Y") != 0 {
 			fmt.Printf("Artifact not found")
-		}
 		}
 	}
 	//print array
