@@ -106,13 +106,11 @@ func main() {
 	titleisbnList := createTitleISBNList(records)
 	for i := range titleisbnList {
 		if titleisbnList[i].Title == title {
-			fmt.Printf("Title Found! Your title and ISBN are: %s-\n", titleisbnList[i])
+			fmt.Printf("Title Found! Your title and ISBN are: %s\n", titleisbnList[i])
 		} else if titleisbnList[i].ISBN == isbn {
-			fmt.Printf("ISBN Found! Your title and ISBN are: %s-\n", titleisbnList[i])
-		} else {
-			fmt.Printf("Neither Title nor ISBN was found.")
+			fmt.Printf("ISBN Found! Your title and ISBN are: %s\n", titleisbnList[i])
 		}
 	}
 	//print array
-	fmt.Printf("%+v\n", titleisbnList)
+	//fmt.Printf("%+v\n", titleisbnList)
 }
