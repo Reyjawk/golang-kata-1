@@ -108,8 +108,9 @@ func main() {
 	}
 	if strings.Compare(line, "T") == 0 || strings.Compare(line, "I") == 0 {
 		for i := range titleisbnList {
-			fmt.Printf("Printing Title: %s\n", titleisbnList[i].Title)
-			if strings.TrimRight(titleisbnList[i].Title, "\n") == strings.TrimRight(title,"\n") {
+			fmt.Printf("Printing Array Title: %s\n", titleisbnList[i].Title)
+			fmt.Printf("Printing Var Title: %s\n", title)
+			if titleisbnList[i].Title == title {
 				fmt.Printf("Title Found! Your title and ISBN are: %s\n", titleisbnList[i])
 				found = "Y"
 			} else if titleisbnList[i].ISBN == isbn {
