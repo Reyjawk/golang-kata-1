@@ -106,7 +106,7 @@ func main() {
 		} else if titleisbnList[i].ISBN == isbn {
 			fmt.Printf("ISBN Found! Your title and ISBN are: %s-\n", titleisbnList[i])
 		} else {
-			fmt.Printf("Neither Title nor ISBN was found."
+			fmt.Printf("Neither Title nor ISBN was found.")
 		}
 	}
 	//print array
