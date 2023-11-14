@@ -42,6 +42,7 @@ func welcomeMessage() string {
 
 func main() {
 	fmt.Println(welcomeMessage())
+	fmt.Println("Input T to look up by Title or I to look up by ISBN:")
 	userInput := bufio.NewReader(os.Stdin)
 	line, err := userInput.ReadString('\n')
 	check(err)
@@ -49,7 +50,6 @@ func main() {
 	books, err := os.Open("/Users/toni/GoLang/golang-kata-1/resources/books.csv")
     check(err)
 	defer books.Close()
-	fmt.Println("Input T to look up by Title or I to look up by ISBN:")
 	/*
 	scanFile := bufio.NewScanner(books)
 	scanFile.Split(bufio.ScanLines)
