@@ -48,13 +48,13 @@ func main() {
 	check(err)
 	fmt.Printf("Input was: %s-\n", line)
 	lookupBy = line
-	if lookupBy = "T" {
+	if lookupBy == "T" {
 		fmt.Println("Enter Title:")
 		userInput := bufio.NewReader(os.Stdin)
 		line, err := userInput.ReadString('\n')
 		check(err)
 		fmt.Printf("Title entered: %s-\n", line)
-	} else if lookupBy = "I" {
+	} else if lookupBy == "I" {
 		fmt.Println("Enter ISBN:")
 		userInput := bufio.NewReader(os.Stdin)
 		line, err := userInput.ReadString('\n')
