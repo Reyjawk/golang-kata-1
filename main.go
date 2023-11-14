@@ -42,8 +42,8 @@ func welcomeMessage() string {
 
 func main() {
 	fmt.Println(welcomeMessage())
-	reader := bufio.NewReader(os.Stdin)
-	line, err := reader.ReadString('\n')
+	userInput := bufio.NewReader(os.Stdin)
+	line, err := userInput.ReadString('\n')
 	check(err)
 	fmt.Printf("Input was: %s-\n", line)
 	books, err := os.Open("/Users/toni/GoLang/golang-kata-1/resources/books.csv")
