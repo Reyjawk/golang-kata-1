@@ -44,6 +44,7 @@ func welcomeMessage() string {
 func main() {
 	var title string
 	var isbn string
+	var found string
 	fmt.Println(welcomeMessage())
 	fmt.Println("Input T to look up by Title, I to look up by ISBN, or A to show all listings:")
 	userInput := bufio.NewReader(os.Stdin)
@@ -109,9 +110,12 @@ func main() {
 		for i := range titleisbnList {
 			if titleisbnList[i].Title == title {
 				fmt.Printf("Title Found! Your title and ISBN are: %s\n", titleisbnList[i])
+				found = "Y"
 			} else if titleisbnList[i].ISBN == isbn {
 				fmt.Printf("ISBN Found! Your title and ISBN are: %s\n", titleisbnList[i])
-			} else {
+				found = "Y"
+			} 
+			if strings.Compare(found, "T") != 0 {
 				fmt.Printf("Artifact not found")
 			}
 		}
