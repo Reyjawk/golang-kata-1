@@ -1,7 +1,7 @@
 package main
 
 import (
-//	"bufio"
+	"bufio"
 //	"bytes"
 	"encoding/csv"
 	"fmt"
@@ -36,11 +36,24 @@ func createTitleISBNList(records [] []string) []TitleISBN {
 	}
 	return titleisbnList
 }
+func welcomeMessage() string {
+	return "Hello Welcome to Book Lookup Tool!"
+}
+func getInputFromUser() string {
+	fmt.Println("Input T to look up by Title or I to look up by ISBN:")
+	reader := bufio.NewReader(os.Stdin)
+	line, err := reader.ReadString('\n')
+	check(err)
+	fmt.Printf("Input was: %s-\n", line)
+	return line
+}
+
 func main() {
 	fmt.Println(welcomeMessage())
 	books, err := os.Open("/Users/toni/GoLang/golang-kata-1/resources/books.csv")
     check(err)
 	defer books.Close()
+	userInput = getInputFromUser()
 	/*
 	scanFile := bufio.NewScanner(books)
 	scanFile.Split(bufio.ScanLines)
@@ -75,7 +88,4 @@ func main() {
 	titleisbnList := createTitleISBNList(records)
 	//print array
 	fmt.Printf("%+v\n", titleisbnList)
-}
-func welcomeMessage() string {
-	return "Hello world!"
 }
