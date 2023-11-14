@@ -51,24 +51,6 @@ func main() {
 	check(err)
 	fmt.Printf("Input was: %s\n", line)
 	line = strings.TrimRight(line, "\n")
-	if strings.Compare(line, "T") == 0 {
-		fmt.Println("Enter Title:")
-		userInput := bufio.NewReader(os.Stdin)
-		line, err := userInput.ReadString('\n')
-		check(err)
-		fmt.Printf("Title entered: %s\n", line)
-		title = strings.TrimRight(line, "\n")
-		fmt.Printf("Variable Title entered: %s\n", title)
-	} 
-	if strings.Compare(line, "I") == 0 {
-		fmt.Println("Enter ISBN:")
-		userInput := bufio.NewReader(os.Stdin)
-		line, err := userInput.ReadString('\n')
-		check(err)
-		fmt.Printf("ISBN entered: %s\n", line)
-		isbn = strings.TrimRight(line, "\n")
-		fmt.Printf("Variable ISBN entered: %s\n", isbn)
-	}
 	books, err := os.Open("/Users/toni/GoLang/golang-kata-1/resources/books.csv")
     check(err)
 	defer books.Close()
@@ -104,6 +86,25 @@ func main() {
 		fmt.Println(eachrecord)
 	} */
 	titleisbnList := createTitleISBNList(records)
+	if strings.Compare(line, "T") == 0 {
+		fmt.Println("Enter Title:")
+		userInput := bufio.NewReader(os.Stdin)
+		line, err := userInput.ReadString('\n')
+		check(err)
+		fmt.Printf("Title entered: %s\n", line)
+		title = strings.TrimRight(line, "\n")
+	} 
+	if strings.Compare(line, "I") == 0 {
+		fmt.Println("Enter ISBN:")
+		userInput := bufio.NewReader(os.Stdin)
+		line, err := userInput.ReadString('\n')
+		check(err)
+		fmt.Printf("ISBN entered: %s\n", line)
+		isbn = strings.TrimRight(line, "\n")
+	} else if strings.Compare(line, "A") == 0 {
+		//print array
+		fmt.Printf("%+v\n", titleisbnList)
+	}
 	for i := range titleisbnList {
 		if titleisbnList[i].Title == title {
 			fmt.Printf("Title Found! Your title and ISBN are: %s\n", titleisbnList[i])
