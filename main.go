@@ -47,13 +47,13 @@ func main() {
 	line, err := userInput.ReadString('\n')
 	check(err)
 	fmt.Printf("Input was: %s-\n", line)
-	if fmt.Println(strings.Compare(line, "T")) == 0 {
+	if strings.Compare(line, "T") == 0 {
 		fmt.Println("Enter Title:")
 		userInput := bufio.NewReader(os.Stdin)
 		line, err := userInput.ReadString('\n')
 		check(err)
 		fmt.Printf("Title entered: %s-\n", line)
-	} else if fmt.Println(strings.Compare(line, "I")) == 0 {
+	} else if strings.Compare(line, "I") == 0 {
 		fmt.Println("Enter ISBN:")
 		userInput := bufio.NewReader(os.Stdin)
 		line, err := userInput.ReadString('\n')
