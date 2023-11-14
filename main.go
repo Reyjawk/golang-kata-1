@@ -55,6 +55,7 @@ func main() {
 		line, err := userInput.ReadString('\n')
 		check(err)
 		fmt.Printf("Title entered: %s-\n", line)
+		title = strings.TrimRight(line, "\n")
 	} 
 	if strings.Compare(line, "I") == 0 {
 		fmt.Println("Enter ISBN:")
@@ -62,6 +63,7 @@ func main() {
 		line, err := userInput.ReadString('\n')
 		check(err)
 		fmt.Printf("ISBN entered: %s-\n", line)
+		isbn = strings.TrimRight(line, "\n")
 	}
 	books, err := os.Open("/Users/toni/GoLang/golang-kata-1/resources/books.csv")
     check(err)
@@ -98,6 +100,15 @@ func main() {
 		fmt.Println(eachrecord)
 	} */
 	titleisbnList := createTitleISBNList(records)
+	for i := range titleisbnList {
+		if titleisbnList[i].Title == title {
+			fmt.Printf("Title Found! Your title and ISBN are: %s-\n", titleisbnList[i])
+		} else if titleisbnList[i].ISBN == isbn {
+			fmt.Printf("ISBN Found! Your title and ISBN are: %s-\n", titleisbnList[i])
+		} else {
+			fmt.Printf("Neither Title nor ISBN was found."
+		}
+	}
 	//print array
 	fmt.Printf("%+v\n", titleisbnList)
 }
