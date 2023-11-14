@@ -110,7 +110,7 @@ func main() {
 		for i := range titleisbnList {
 			fmt.Printf("Printing Array Title: %s", titleisbnList[i].Title)
 			fmt.Printf("Printing Var Title: %s", title)
-			if titleisbnList[i].Title == title {
+			if (strings.TrimSpace(titleisbnList[i].Title) == strings.TrimSpace(title) {
 				fmt.Printf("Title Found! Your title and ISBN are: %s\n", titleisbnList[i])
 				found = "Y"
 			} else if titleisbnList[i].ISBN == isbn {
