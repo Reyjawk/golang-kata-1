@@ -105,11 +105,15 @@ func main() {
 		//print array
 		fmt.Printf("%+v\n", titleisbnList)
 	}
-	for i := range titleisbnList {
-		if titleisbnList[i].Title == title {
-			fmt.Printf("Title Found! Your title and ISBN are: %s\n", titleisbnList[i])
-		} else if titleisbnList[i].ISBN == isbn {
-			fmt.Printf("ISBN Found! Your title and ISBN are: %s\n", titleisbnList[i])
+	if strings.Compare(line, "T") == 0 || strings.Compare(line, "I") == 0 {
+		for i := range titleisbnList {
+			if titleisbnList[i].Title == title {
+				fmt.Printf("Title Found! Your title and ISBN are: %s\n", titleisbnList[i])
+			} else if titleisbnList[i].ISBN == isbn {
+				fmt.Printf("ISBN Found! Your title and ISBN are: %s\n", titleisbnList[i])
+			} else {
+				fmt.Printf("Artifact not found")
+			}
 		}
 	}
 	//print array
