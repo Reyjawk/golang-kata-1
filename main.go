@@ -47,7 +47,8 @@ func main() {
 	userInput := bufio.NewReader(os.Stdin)
 	line, err := userInput.ReadString('\n')
 	check(err)
-	fmt.Printf("Input was: ", line)
+	fmt.Printf("Input was: %s-\n", line)
+	line = strings.TrimRight(line, "\n")
 	if strings.Compare(line, "T") == 0 {
 		fmt.Println("Enter Title:")
 		userInput := bufio.NewReader(os.Stdin)
